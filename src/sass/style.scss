@@ -1,10 +1,154 @@
 @import "includes/base";
+@import "helpers/variables";
 
-header {
-  h1 {
-    font-weight: 300;
+.menu {
+  & {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+
+    @media screen and (max-height: 450px) {
+      & {overflow-y: auto;}
+    }
+  }
+
+  & a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+
+    &:hover, &:focus {
+      color: #f1f1f1;
+    }
+
+    @media screen and (max-height: 450px) {
+      & {font-size: 20px}
+    }
+  }
+
+  &--btn {
+    width: 70px;
+    height: 70px;
+    background-color: $menu-background;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: width .5s 1s cubic-bezier(0.01, 0.74, 0.4, 1), height .5s .5s cubic-bezier(0.01, 0.74, 0.4, 1), background .3s linear;
+    z-index: 150;
+
+    & > a {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+
+    &.open > a {
+      height: 70px;
+      width: 70px;
+      display: block;
+      float: left;
+      z-index: 151;
+    }
+
+    & span {
+      width: 30px;
+      height: 2px;
+      background: white;
+      display: block;
+      position: absolute;
+      top: 35px;
+      left: 20px;
+      transition: all 0.3s linear;
+    }
+
+    &:hover span:before {
+      top: 14px;
+    }
+
+    &:hover span:after {
+      bottom: 14px;
+    }
+
+    & span:before {
+      top: 9px;
+      left: 0;
+    }
+
+    & span:after {
+      bottom: 9px;
+      left: 0;
+    }
+
+    & span:after, & span:before {
+      content: "";
+      background: white;
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
+    }
+
+    & span:after, & span:before {
+      content: "";
+      background: white;
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
+    }
+
+    &.open span {
+      transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
+      height: 0;
+    }
+
+    &.open:hover span:before {
+      top: auto;
+    }
+
+    &.open span:before {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    &.open span:before {
+      transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
+      top: auto;
+      cursor: pointer;
+    }
+
+    &.open:hover span:after {
+      bottom: auto;
+    }
+
+    &.open span:after {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    &.open span:after {
+    bottom: auto;
+    }
+  }
+
+  &-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
     text-align: center;
-    font-size: 60px;
-    margin-top: 180px;
+    margin-top: 30px;
   }
 }
