@@ -6,7 +6,7 @@
     height: 0%;
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     top: 0;
     left: 0;
     background-color: rgb(0,0,0);
@@ -61,6 +61,16 @@
       z-index: 151;
     }
 
+    &:hover {
+      & span:before {
+        top: 14px;
+      }
+
+      & span:after {
+        bottom: 14px;
+      }
+    }
+
     & span {
       width: 30px;
       height: 2px;
@@ -70,77 +80,58 @@
       top: 35px;
       left: 20px;
       transition: all 0.3s linear;
+
+      &:before {
+        top: 9px;
+        left: 0;
+      }
+
+      &:after {
+        bottom: 9px;
+        left: 0;
+      }
+
+      &:after, &:before {
+        content: "";
+        background: white;
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
+      }
     }
 
-    &:hover span:before {
-      top: 14px;
-    }
+    &.open {
+      span {
+        transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
+        height: 0;
 
-    &:hover span:after {
-      bottom: 14px;
-    }
+        &:before {
+          -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
+          top: auto;
+          cursor: pointer;
+        }
 
-    & span:before {
-      top: 9px;
-      left: 0;
-    }
+        &:after {
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          bottom: auto;
+        }
+      }
 
-    & span:after {
-      bottom: 9px;
-      left: 0;
-    }
+      &:hover {
+        & span:before {
+          top: auto;
+        }
 
-    & span:after, & span:before {
-      content: "";
-      background: white;
-      position: absolute;
-      width: 30px;
-      height: 2px;
-      transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
-    }
-
-    & span:after, & span:before {
-      content: "";
-      background: white;
-      position: absolute;
-      width: 30px;
-      height: 2px;
-      transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
-    }
-
-    &.open span {
-      transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
-      height: 0;
-    }
-
-    &.open:hover span:before {
-      top: auto;
-    }
-
-    &.open span:before {
-      -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-    }
-
-    &.open span:before {
-      transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
-      top: auto;
-      cursor: pointer;
-    }
-
-    &.open:hover span:after {
-      bottom: auto;
-    }
-
-    &.open span:after {
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
-    }
-
-    &.open span:after {
-    bottom: auto;
+        & span:after {
+          bottom: auto;
+        }
+      }
     }
   }
 
@@ -150,5 +141,68 @@
     width: 100%;
     text-align: center;
     margin-top: 30px;
+  }
+}
+
+.title {
+  & h1 {
+    z-index: 2;
+    color: #1c1c1c;
+    text-shadow: none;
+    opacity: .8;
+    transition: all .2s linear;
+    font-size: .75rem;
+    position: absolute;
+    top: 30px;
+    left: 90px;
+    letter-spacing: .4em;
+    text-transform: uppercase;
+    opacity: .85;
+  }
+
+  span {
+    text-transform: none;
+    letter-spacing: .2em;
+    opacity: .7;
+    -webkit-font-smoothing: initial;
+  }
+}
+
+.photo-wrapper {
+  & {
+    text-align: center;
+    background-image: url(../img/profile-picture.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 70% auto;
+    margin-top: 4em;
+    // position: fixed;
+    height: 80vh;
+  }
+}
+.about-text {
+  color: white;
+  background-color: #252525;
+  padding: 2em 3.2em;
+  font-family: 'Avenir' !important;
+
+  & h1 {
+    font-size: 5em;
+    letter-spacing: -0.07em;
+    line-height: 100%;
+    margin-top: 0.8em;
+    color: $base-color;
+    font-weight: 200 !important;
+  }
+
+  &  h2 {
+    font-size: 2em;
+    line-height: 120%;
+    margin-bottom: 0.5em;
+    font-weight: 200 !important;
+  }
+
+  &  h5 {
+    font-weight: 200 !important;
   }
 }
