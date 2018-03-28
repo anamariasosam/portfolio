@@ -26,4 +26,9 @@ function nav() {
 
 $(document).ready(function(){
 	$('.menu--btn').click(nav);
+  $('#fullpage').fullpage({
+		anchors:['about', 'fehandbags', 'eldorado'],
+    navigation: true,
+    navigationPosition: 'left'
+	});
 });
