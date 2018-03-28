@@ -16,7 +16,7 @@ var paths = {
   sass: './src/sass/',
   css: './build/css/',
   js: './build/js/',
-  data: './src/_data/'
+  data: './src/views/_data/'
 };
 
 /**
@@ -24,7 +24,7 @@ var paths = {
  * matching file name. index.pug - index.pug.json
  */
 gulp.task('pug', function () {
-  return gulp.src('./src/*.pug')
+  return gulp.src('./src/views/*.pug')
     .pipe(data(function (file) {
       return require(paths.data + path.basename(file.path) + '.json');
     }))
@@ -97,7 +97,7 @@ gulp.task('js', function(){
 gulp.task('watch', function () {
   gulp.watch(paths.sass + '**/*.scss', ['sass']);
   gulp.watch('./src/js/*.js', ['js']);
-  gulp.watch('./src/**/*.pug', ['rebuild']);
+  gulp.watch('./src/views/**/*.pug', ['rebuild']);
 });
 
 // Build task compile sass and pug.

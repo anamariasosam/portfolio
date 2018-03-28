@@ -1,0 +1,7 @@
+mixin section(name)
+  section(id=name)
+    .row.no-gutters
+      div(class=`${name}-img col-12 col-md-6 text-center section--img` )
+      .col-12.col-md-6
+        div(class=`${name}-text section--text`)
+          block

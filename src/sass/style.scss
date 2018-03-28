@@ -168,43 +168,144 @@
   }
 }
 
-.photo-wrapper {
-  & {
-    text-align: center;
-    margin-top: 6em;
+.section {
+  &--btn {
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.875em;
+    letter-spacing: 0.1em;
+    padding: 2em 5em;
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: 1em;
+    border: 1px solid #fff;
+    transition: all 0.5s ease-in-out;
 
-    @media (min-width: 767px) {
+    &:hover {
+      text-decoration: none;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 2em 5.5em;
+    }
+
+  }
+
+  &--img {
+    background-color: white;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% auto;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+
+    @media screen and (max-width: 768px) {
       & {
-        position: fixed;
-        width: 50%;
-        height: auto;
+        position: relative;
+        height: 800px;
+      }
+    }
+
+    @media screen and (max-width: 568px) {
+      & {
+        height: 550px;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      & {
+        height: 330px;
       }
     }
   }
+
+  &--text {
+    background-color: #E04527;
+    color: white;
+    padding: 12em 3.2em;
+    text-align: center;
+
+    h1, h2, h3, h4, h5, h6, p {
+      font-weight: 200 !important;
+      font-family: 'Avenir' !important;
+    }
+
+    h2 {
+      font-size: 3.750em;
+      margin: .5em 0em 1em;
+    }
+
+    p {
+      letter-spacing: 0.05em;
+    }
+
+    @media screen and (max-width: 768px) {
+      & {
+        padding: 4em 3em;
+      }
+    }
+
+    & hr {
+      border-color: white;
+      width: 11%;
+    }
+  }
 }
-.about-text {
-  color: white;
-  background-color: #252525;
-  padding: 2em 3.2em;
-  font-family: 'Avenir' !important;
 
-  & h1 {
-    font-size: 5em;
-    letter-spacing: -0.07em;
-    line-height: 100%;
-    margin-top: 0.8em;
-    color: $base-color;
-    font-weight: 200 !important;
+.about {
+  &-img {
+    background-image: url(../img/profile-picture.jpg);
+    background-position: center top;
+    background-size: auto 110%;
+    margin-top: 4em;
+
+    @media screen and (max-width: 768px) {
+      & {
+        position: relative;
+        height: 100vh;
+      }
+    }
   }
 
-  &  h2 {
-    font-size: 2em;
-    line-height: 120%;
-    margin-bottom: 0.5em;
-    font-weight: 200 !important;
+  &-text {
+    background-color: #252525;
+    padding: 2em 3.2em;
+
+    & h1 {
+      font-size: 5em;
+      margin-top: 0.8em;
+      color: $base-color;
+
+      @media screen and (max-width: 768px) {
+        & {
+          margin-top: auto
+        }
+      }
+    }
+
+    &  h2 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.fehandbags {
+  &-img {
+    background-image: url(../img/fehandbags.jpg);
   }
 
-  &  h5 {
-    font-weight: 200 !important;
+  &-text {
+    background-color: red;
+  }
+}
+
+.eldorado {
+  &-img {
+    background-image: url(../img/eldoradoart.jpg);
+  }
+
+  &-text {
+    background-color: blue;
   }
 }
