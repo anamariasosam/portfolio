@@ -6,7 +6,8 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   browserSync = require('browser-sync'),
   concat = require('gulp-concat'),
-  sourcemaps = require('gulp-sourcemaps');
+  rename = require('gulp-rename');
+  uglify = require('gulp-uglify-es').default;
 
 /*
  * Directories here
@@ -80,9 +81,9 @@ gulp.task('sass', function () {
  */
 gulp.task('js', function(){
   return gulp.src('./src/js/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(concat('app.min.js'))
-    .pipe(sourcemaps.write())
+    .pipe(concat('app.js'))
+    .pipe(uglify())
+    .pipe(rename("app.min.js"))
     .pipe(gulp.dest(paths.js))
     .pipe(browserSync.reload({
       stream: true

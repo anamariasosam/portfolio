@@ -1,0 +1,17 @@
+@mixin project-color($project-name, $project-color) {
+  .#{$project-name} {
+    &-menu--link {
+      &:hover {
+        color: $project-color
+      }
+    }
+
+    &-img {
+      background-image: url(../img/#{$project-name}.jpg);
+    }
+
+    &-text {
+      background-color: $project-color;
+    }
+  }
+}

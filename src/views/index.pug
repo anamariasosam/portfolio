@@ -5,32 +5,11 @@ include mixins/section-content
 block content
   include _partials/menu
   include components/about
-  +section('fehandbags')
-    +section-content(
-      'Fe Handbags',
-      'Shopify Store',
-      'https://fehandbags.com/',
-      'High end Colombian handbags and accessories with 100% genuine leather handmade by indigenous tribes such as Kunas, Embera an Wayuu'
-    )  
-  +section('eldorado')
-    +section-content(
-      'El Dorado Art',
-      'Shopify Store',
-      'https://eldoradoart.com/',
-      'Productos únicos y exclusivos hechos por comunidades y artistas independientes. Arte, moda y joyería.'
-    )  
-  +section('manik')
-    +section-content(
-      'Manik',
-      'Shopify Store',
-      'https://manik.com.co/',
-      'Sanación decorativa, por medio de nuestros elementos buscamos generar cambios positivos en las personas, en búsqueda de autosanación y luchar por sus sueños.'
-    )  
-  +section('below')
-    +section-content(
-      '33 Below Ice Cream',
-      'Wordpress Site',
-      'http://33belowicecream.com/',
-      "Miami's original hand rolled ice cream!"
-    )  
-    
+  each project in projects
+    +section(project.slug)
+      +section-content(
+        project.name,
+        project.type,
+        project.url,
+        project.description
+      )

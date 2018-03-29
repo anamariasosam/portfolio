@@ -1,4 +1,34 @@
 {
   "title": "Ana María Sosa - Portfolio",
-  "name": "Ana María Sosa"
+  "name": "Ana María Sosa",
+  "projects": [
+    {
+      "slug": "fehandbags",
+      "name": "Fe Handbags",
+      "type":"Shopify Store",
+      "url":"https://fehandbags.com/",
+      "description":"High end Colombian handbags and accessories with 100% genuine leather handmade by indigenous tribes such as Kunas, Embera an Wayuu"
+    },
+    {
+      "slug": "eldorado",
+      "name": "El Dorado Art",
+      "type": "Shopify Store",
+      "url": "https://eldoradoart.com/",
+      "description": "Productos únicos y exclusivos hechos por comunidades y artistas independientes. Arte, moda y joyería."
+    },
+    {
+      "slug": "manik",
+      "name": "Manik",
+      "type": "Shopify Store",
+      "url": "https://manik.com.co/",
+      "description": "Sanación decorativa, por medio de nuestros elementos buscamos generar cambios positivos en las personas, en búsqueda de autosanación y luchar por sus sueños."
+    },
+    {
+      "slug": "below",
+      "name": "33 Below Ice Cream",
+      "type": "Wordpress Site",
+      "url": "http://33belowicecream.com/",
+      "description": "Miami's original hand rolled ice cream!"
+    }
+  ]
 }

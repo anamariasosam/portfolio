@@ -1,18 +1,23 @@
 @import "includes/base";
 @import "helpers/variables";
+@import "mixins/projects";
 
 .menu {
   & {
-    height: 0%;
-    width: 100%;
     position: fixed;
     z-index: 100;
     top: 0;
     left: 0;
+
+    overflow-y: hidden;
+
+    width: 100%;
+    height: 0%;
+
+    transition: 0.5s;
+
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0, 0.9);
-    overflow-y: hidden;
-    transition: 0.5s;
 
     @media screen and (max-height: 450px) {
       & {overflow-y: auto;}
@@ -20,39 +25,42 @@
   }
 
   & a {
-    padding: 8px;
-    text-decoration: none;
     display: block;
-    transition: 0.3s;
 
-    &:hover, &:focus {
-      color: #f1f1f1;
-    }
+    padding: 8px;
+
+    transition: 0.3s;
+    text-decoration: none;
   }
 
   &--btn {
-    width: 70px;
-    height: 70px;
-    background-color: $about-background;
     position: fixed;
+    z-index: 150;
     top: 0;
     left: 0;
-    z-index: 100;
+
+    width: 70px;
+    height: 70px;
+
     transition: width .5s 1s cubic-bezier(0.01, 0.74, 0.4, 1), height .5s .5s cubic-bezier(0.01, 0.74, 0.4, 1), background .3s linear;
-    z-index: 150;
+
+    background-color: $about;
 
     & > a {
       position: absolute;
-      height: 100%;
+
       width: 100%;
+      height: 100%;
     }
 
     &.open > a {
-      height: 70px;
-      width: 70px;
+      z-index: 151;
+
       display: block;
       float: left;
-      z-index: 151;
+
+      width: 70px;
+      height: 70px;
     }
 
     &:hover {
@@ -66,14 +74,18 @@
     }
 
     & span {
-      width: 30px;
-      height: 2px;
-      background: white;
-      display: block;
       position: absolute;
       top: 35px;
       left: 20px;
+
+      display: block;
+
+      width: 30px;
+      height: 2px;
+
       transition: all 0.3s linear;
+
+      background: white;
 
       &:before {
         top: 9px;
@@ -86,34 +98,40 @@
       }
 
       &:after, &:before {
-        content: "";
-        background: white;
         position: absolute;
+
         width: 30px;
         height: 2px;
+
+        content: "";
         transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
+
+        background: white;
       }
     }
 
     &.open {
       span {
-        transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
         height: 0;
 
+        transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
+
         &:before {
+          top: auto;
+
+          cursor: pointer;
+          transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
           -webkit-transform: rotate(-45deg);
           -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
-          transition: all .3s cubic-bezier(0.01, 0.74, 0.4, 1);
-          top: auto;
-          cursor: pointer;
         }
 
         &:after {
+          bottom: auto;
+
           -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
           transform: rotate(45deg);
-          bottom: auto;
         }
       }
 
@@ -132,28 +150,33 @@
   &-content {
     position: relative;
     top: 25%;
+
     width: 100%;
-    text-align: center;
     margin-top: 30px;
 
+    text-align: center;
 
     & h6 {
-      opacity: 1;
-      transform: translate(0px, 0px) scale(1, 1);
-      transition: all .5s .65s cubic-bezier(0.01, 0.74, 0.4, 1);
-      font-size: 0.875em;
-      text-transform: uppercase;
-      color: white;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-      letter-spacing: 0.2em;
       margin-top: 2em;
       margin-bottom: 0;
+
+      transition: all .5s .65s cubic-bezier(0.01, 0.74, 0.4, 1);
+      transform: translate(0px, 0px) scale(1, 1);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+
+      opacity: 1;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+      font-size: 0.875em;
     }
 
     &--item {
-      font-size: 2em;
       color: white;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+      font-size: 2em;
     }
 
     & ul {
@@ -161,77 +184,45 @@
       & {
         margin: 0;
         padding: 0;
+
         list-style: none;
-      }
-
-
-      & li:nth-child(1) {
-        opacity: 1;
-        -webkit-transform: translate(0px, 0px) scale(1, 1);
-        -ms-transform: translate(0px, 0px) scale(1, 1);
-        transform: translate(0px, 0px) scale(1, 1);
-        transition: all .5s .70s cubic-bezier(0.01, 0.74, 0.4, 1);
-      }
-    }
-
-    .about {
-      &:hover {
-        color: $about-color
-      }
-    }
-
-    .fehandbags {
-      &:hover {
-        color: $fehandbags-color
-      }
-    }
-
-    .eldorado {
-      &:hover {
-        color: $eldorado-color
-      }
-    }
-
-    .manik {
-      &:hover {
-        color: $manik-color
-      }
-    }
-
-    .below {
-      &:hover {
-        color: $below-color
       }
     }
   }
 
   & hr {
-    border-color: white;
     width: 15%;
     margin-top: 5.5em;
+
+    border-color: white;
   }
 }
 
 .title {
   & h1 {
-    z-index: 2;
-    color: #1c1c1c;
-    text-shadow: none;
-    opacity: .8;
-    transition: all .2s linear;
-    font-size: .75rem;
     position: absolute;
+    z-index: 2;
     top: 30px;
     left: 90px;
+
+    transition: all .2s linear;
     letter-spacing: .4em;
     text-transform: uppercase;
+
+    opacity: .8;
     opacity: .85;
+    color: #1c1c1c;
+    text-shadow: none;
+
+    font-size: .75rem;
   }
 
   span {
-    text-transform: none;
     letter-spacing: .2em;
+    text-transform: none;
+
     opacity: .7;
+
     -webkit-font-smoothing: initial;
   }
 }
@@ -245,42 +236,52 @@
   svg {
     height: 2rem;
     margin-right: 20px;
+    fill: #fff;
   }
 }
 
 .section {
   &--btn {
     display: inline-block;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 0.875em;
-    letter-spacing: 0.1em;
-    padding: 2em 5em;
-    background: rgba(0, 0, 0, 0.2);
+
     margin-top: 1em;
-    border: 1px solid #fff;
+    padding: 2em 5em;
+
     transition: all 0.5s ease-in-out;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: #fff;
+    border: 1px solid #fff;
+    background: rgba(0, 0, 0, 0.2);
+
+    font-size: 0.875em;
 
     &:hover {
-      text-decoration: none;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
       padding: 2em 5.5em;
+
+      text-decoration: none;
+
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
     }
   }
 
   &--img {
-    background-color: white;
+    z-index: 1;
+
     text-align: center;
+
+    background-color: white;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80% auto;
-    z-index: 1;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 
     @media screen and (max-width: 768px) {
       & {
         position: relative;
+
         height: 800px;
       }
     }
@@ -299,9 +300,11 @@
   }
 
   &--text {
-    color: white;
     padding: 5.5em 3.2em;
+
     text-align: center;
+
+    color: white;
 
     @media screen and (min-width: 576px) {
       & {
@@ -328,17 +331,19 @@
     }
 
     h1, h2, h3, h4, h5, h6, p {
-      font-weight: 200 !important;
       font-family: 'Avenir' !important;
+      font-weight: 200 !important;
     }
 
     h2 {
-      font-size: 3.750em;
       margin: .4em 0em 1em;
+
+      font-size: 3.750em;
 
       @media screen and (max-width: 768px) {
         & {
           margin: .5em 0em;
+
           font-size: 3em;
         }
       }
@@ -349,78 +354,38 @@
     }
 
     & hr {
-      border-color: white;
       width: 11%;
+
+      border-color: white;
     }
   }
 }
 
 .about {
   &-img {
-    background-image: url(../img/profile-picture.jpg);
-    background-position: center top;
-    background-size: auto 110%;
     margin-top: 4em;
 
-    @media screen and (max-width: 768px) {
-      & {
-        position: relative;
-        height: 100vh;
-      }
-    }
+    background-position: center top;
+    background-size: auto 110%;
   }
 
   &-text {
-    background-color: $about-background;
-
     & h2 {
-      font-size: 5em;
       color: #fff;
+
+      font-size: 5em;
     }
 
     &  h6 {
-      font-size: 2em;
       margin-bottom: 0.5em;
+
+      font-size: 2em;
     }
   }
 }
 
-.fehandbags {
-  &-img {
-    background-image: url(../img/fehandbags.jpg);
-  }
-
-  &-text {
-    background-color: $fehandbags-background;
-  }
-}
-
-.eldorado {
-  &-img {
-    background-image: url(../img/eldoradoart.jpg);
-  }
-
-  &-text {
-    background-color: $eldorado-background;
-  }
-}
-
-.below {
-  &-img {
-    background-image: url(../img/33below.png);
-  }
-
-  &-text {
-    background-color: $below-background;
-  }
-}
-
-.manik {
-  &-img {
-    background-image: url(../img/manik.jpg);
-  }
-
-  &-text {
-    background-color: $manik-background;
-  }
-}
+@include project-color('about', $about);
+@include project-color('fehandbags', $fehandbags);
+@include project-color('eldorado', $eldorado);
+@include project-color('manik', $manik);
+@include project-color('below', $below);
