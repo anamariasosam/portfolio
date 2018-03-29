@@ -1,9 +1,13 @@
 /* ------ Variables  ----- */
-$base-color: #ff007a;
-$base-color-hover: darken($base-color, 10%);
-$background: red;
-$background-alt: #f2f2f5;
-$border: #dcd9d9;
-$heading: #374054;
-$text: #74808a;
-$menu-background: #ff007a;
+$about: green;
+$fehandbags: red;
+$eldorado: blue;
+
+$about-background: $about;
+$about-color: $about;
+
+$fehandbags-background: $fehandbags;
+$fehandbags-color: $fehandbags;
+
+$eldorado-background: $eldorado;
+$eldorado-color: $eldorado;

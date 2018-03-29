@@ -1,0 +1,6 @@
+mixin social-icon(name, path)
+  - var socialNetwork = "https://www." + name + ".com/anamariasosam"
+  a(href=socialNetwork target="_blank")
+    svg(data-icon=name viewBox="0 0 32 32" style="fill:white")
+      title #{name} icon
+      path(d=path)

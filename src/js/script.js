@@ -24,7 +24,36 @@ function nav() {
   }
 }
 
+function setMenuBackgroundColor() {
+  var sections = [
+    {
+      name: 'about',
+      color: 'green'
+    },
+    {
+      name: 'fehandbags',
+      color: 'red'
+    },
+    {
+      name: 'eldorado',
+      color: 'blue'
+    }
+  ]
+
+  var height = $(window).scrollTop();
+  sections.map(function(section) {
+    if ( height >= $(`#${section.name}-section`).position().top) {
+      $(`.${section.name}-text p,
+        .${section.name}-text h6,
+        .${section.name}-text h2,
+        .${section.name}-text a`
+      ).removeClass('invisible').addClass('fadeInRightBig')
+      $('.menu--btn').css('background-color', section.color )
+    }
+  })
+}
 $(document).ready(function(){
+  setMenuBackgroundColor()
 	$('.menu--btn').on('click', nav);
 	$('.menu-item').on('click', function() {
     nav()
@@ -33,5 +62,9 @@ $(document).ready(function(){
         { scrollTop: $(`#${$(this).attr('id')}-section`).offset().top },
         'slow'
       );
+  });
+
+  $(window).scroll(function() {
+    setMenuBackgroundColor()
   });
 });

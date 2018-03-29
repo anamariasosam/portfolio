@@ -22,24 +22,18 @@
   & a {
     padding: 8px;
     text-decoration: none;
-    font-size: 36px;
-    color: #818181;
     display: block;
     transition: 0.3s;
 
     &:hover, &:focus {
       color: #f1f1f1;
     }
-
-    @media screen and (max-height: 450px) {
-      & {font-size: 20px}
-    }
   }
 
   &--btn {
     width: 70px;
     height: 70px;
-    background-color: $menu-background;
+    background-color: $about-background;
     position: fixed;
     top: 0;
     left: 0;
@@ -141,6 +135,68 @@
     width: 100%;
     text-align: center;
     margin-top: 30px;
+
+
+    & h6 {
+      opacity: 1;
+      transform: translate(0px, 0px) scale(1, 1);
+      transition: all .5s .65s cubic-bezier(0.01, 0.74, 0.4, 1);
+      font-size: 0.875em;
+      text-transform: uppercase;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      letter-spacing: 0.2em;
+      margin-top: 2em;
+      margin-bottom: 0;
+    }
+
+    &--item {
+      font-size: 2em;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    & ul {
+
+      & {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+
+      & li:nth-child(1) {
+        opacity: 1;
+        -webkit-transform: translate(0px, 0px) scale(1, 1);
+        -ms-transform: translate(0px, 0px) scale(1, 1);
+        transform: translate(0px, 0px) scale(1, 1);
+        transition: all .5s .70s cubic-bezier(0.01, 0.74, 0.4, 1);
+      }
+    }
+
+    .about {
+      &:hover {
+        color: $about-color
+      }
+    }
+
+    .fehandbags {
+      &:hover {
+        color: $fehandbags-color
+      }
+    }
+
+    .eldorado {
+      &:hover {
+        color: $eldorado-color
+      }
+    }
+  }
+
+  & hr {
+    border-color: white;
+    width: 15%;
+    margin-top: 5.5em;
   }
 }
 
@@ -168,6 +224,18 @@
   }
 }
 
+.social-icons {
+  & {
+    display: flex;
+    justify-content: center;
+  }
+
+  svg {
+    height: 2rem;
+    margin-right: 20px;
+  }
+}
+
 .section {
   &--btn {
     display: inline-block;
@@ -187,7 +255,6 @@
       color: #fff;
       padding: 2em 5.5em;
     }
-
   }
 
   &--img {
@@ -220,10 +287,33 @@
   }
 
   &--text {
-    background-color: #E04527;
     color: white;
-    padding: 12em 3.2em;
+    padding: 5.5em 3.2em;
     text-align: center;
+
+    @media screen and (min-width: 576px) {
+      & {
+        padding: 9em 3em;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      & {
+        padding: 14em 3em;
+      }
+    }
+
+    @media screen and (min-width: 992px) {
+      & {
+        padding: 17em 3em;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      & {
+        padding: 20em 3em;
+      }
+    }
 
     h1, h2, h3, h4, h5, h6, p {
       font-weight: 200 !important;
@@ -232,17 +322,18 @@
 
     h2 {
       font-size: 3.750em;
-      margin: .5em 0em 1em;
+      margin: .4em 0em 1em;
+
+      @media screen and (max-width: 768px) {
+        & {
+          margin: .5em 0em;
+          font-size: 3em;
+        }
+      }
     }
 
     p {
       letter-spacing: 0.05em;
-    }
-
-    @media screen and (max-width: 768px) {
-      & {
-        padding: 4em 3em;
-      }
     }
 
     & hr {
@@ -268,22 +359,14 @@
   }
 
   &-text {
-    background-color: #252525;
-    padding: 2em 3.2em;
+    background-color: $about-background;
 
-    & h1 {
+    & h2 {
       font-size: 5em;
-      margin-top: 0.8em;
-      color: $base-color;
-
-      @media screen and (max-width: 768px) {
-        & {
-          margin-top: auto
-        }
-      }
+      color: #fff;
     }
 
-    &  h2 {
+    &  h6 {
       font-size: 2em;
       margin-bottom: 0.5em;
     }
@@ -296,7 +379,7 @@
   }
 
   &-text {
-    background-color: red;
+    background-color: $fehandbags-background;
   }
 }
 
@@ -306,6 +389,6 @@
   }
 
   &-text {
-    background-color: blue;
+    background-color: $eldorado-background;
   }
 }
