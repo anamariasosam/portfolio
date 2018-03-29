@@ -1,3 +1,4 @@
+
 function openNav() {
   $('#myNav').css( 'height', '100%' )
 
@@ -28,15 +29,23 @@ function setMenuBackgroundColor() {
   var sections = [
     {
       name: 'about',
-      color: 'green'
+      color: '#D7263D'
     },
     {
       name: 'fehandbags',
-      color: 'red'
+      color: '#F46036'
     },
     {
       name: 'eldorado',
-      color: 'blue'
+      color: '#1B998B'
+    },
+    {
+      name: 'manik',
+      color: '#C5D86D'
+    },
+    {
+      name: 'below',
+      color: '#2E294E'
     }
   ]
 
@@ -46,7 +55,6 @@ function setMenuBackgroundColor() {
     if ( height >= $(`#${section.name}-section`).position().top) {
       $('.menu--btn').css('background-color', section.color )
     }
-
 
     if ( height + 500 >= $(`.${section.name}-content`).position().top) {
       $(`.${section.name}-text p,

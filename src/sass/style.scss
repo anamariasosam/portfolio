@@ -191,6 +191,18 @@
         color: $eldorado-color
       }
     }
+
+    .manik {
+      &:hover {
+        color: $manik-color
+      }
+    }
+
+    .below {
+      &:hover {
+        color: $below-color
+      }
+    }
   }
 
   & hr {
@@ -390,5 +402,25 @@
 
   &-text {
     background-color: $eldorado-background;
+  }
+}
+
+.below {
+  &-img {
+    background-image: url(../img/33below.png);
+  }
+
+  &-text {
+    background-color: $below-background;
+  }
+}
+
+.manik {
+  &-img {
+    background-image: url(../img/manik.jpg);
+  }
+
+  &-text {
+    background-color: $manik-background;
   }
 }
