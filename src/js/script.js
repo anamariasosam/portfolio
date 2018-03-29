@@ -41,14 +41,19 @@ function setMenuBackgroundColor() {
   ]
 
   var height = $(window).scrollTop();
+
   sections.map(function(section) {
     if ( height >= $(`#${section.name}-section`).position().top) {
+      $('.menu--btn').css('background-color', section.color )
+    }
+
+
+    if ( height + 500 >= $(`.${section.name}-content`).position().top) {
       $(`.${section.name}-text p,
         .${section.name}-text h6,
         .${section.name}-text h2,
         .${section.name}-text a`
       ).removeClass('invisible').addClass('fadeInRightBig')
-      $('.menu--btn').css('background-color', section.color )
     }
   })
 }
