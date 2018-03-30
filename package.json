@@ -1,6 +1,7 @@
 {
   "name": "Portfolio",
   "version": "1.0.0",
+  "private": true,
   "description": "My name is Ana María Sosa, and this is my porfolio",
   "main": "gulpfile.js",
   "author": "Ana Sosa <anamariasosam@gmail.com>",

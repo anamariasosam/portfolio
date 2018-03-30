@@ -1,27 +1,33 @@
+// element declarations
+const $menuItem = $('.menu-content--item')
+const $nav = $('#myNav')
+const $menuBtn = $('.menu--btn')
+const $window = $(window)
+const $body = $('body')
 
 function openNav() {
-  $('#myNav').css( 'height', '100%' )
-
-  $('.menu-content--item').removeClass('zoomOutLeft')
-  $('.menu-content--item').addClass('fadeInLeftBig')
+  $menuBtn.addClass('open')
+  $body.css( 'overflow', 'hidden' )
+  $nav.css( 'height', '100%' )
+  $menuItem.removeClass('slideOutLeft')
+  $menuItem.addClass('slideInLeft')
 }
 
 function closeNav() {
-  $('.menu-content--item').removeClass('fadeInLeftBig')
-  $('.menu-content--item').addClass('zoomOutLeft')
-
+  $menuBtn.removeClass('open')
+  $menuItem.removeClass('slideInLeft')
+  $menuItem.addClass('slideOutLeft')
+  $body.css( 'overflow', 'auto' )
   setTimeout(function(){
-    $('#myNav').css( 'height', '0%' )
+    $nav.css( 'height', '0%' )
   }, 500);
 }
 
-function nav() {
-  $('.menu--btn').toggleClass('open');
-
-  if($('.menu--btn').hasClass('open')) {
-    openNav()
-  }else{
+function menuHandler() {
+  if($menuBtn.hasClass('open')) {
     closeNav()
+  }else{
+    openNav()
   }
 }
 
@@ -49,36 +55,44 @@ function setMenuBackgroundColor() {
     }
   ]
 
-  var height = $(window).scrollTop();
+  var scrollTop = $window.scrollTop();
 
   sections.map(function(section) {
-    if ( height >= $(`#${section.name}-section`).position().top) {
-      $('.menu--btn').css('background-color', section.color )
+    const sectionY = $(`#${section.name}-section`).position().top
+
+    if ( scrollTop >= sectionY ) {
+      $menuBtn.css('background-color', section.color )
     }
 
-    if ( height + 500 >= $(`.${section.name}-content`).position().top) {
-      $(`.${section.name}-text p,
-        .${section.name}-text h6,
-        .${section.name}-text h2,
-        .${section.name}-text a,
-        .${section.name}-text img`,
-      ).removeClass('invisible').addClass('fadeInUpBig')
+    const contentY = $(`.${section.name}-content`).position().top
+    const animationThreshold = 500
+
+    if ( scrollTop + animationThreshold >= contentY) {
+      $(`.${section.name}-text`)
+        .find('.animated')
+        .removeClass('invisible')
+        .addClass('slideInRight')
     }
   })
 }
+
+function handleItemClick() {
+  closeNav()
+
+  $('html, body')
+    .animate({
+      scrollTop: $(`#${$(this).attr('id')}-section`).offset().top
+    }, 'slow' );
+}
+
 $(document).ready(function(){
   setMenuBackgroundColor()
-	$('.menu--btn').on('click', nav);
-	$('.menu-item').on('click', function() {
-    nav()
-    $('html,body')
-      .animate(
-        { scrollTop: $(`#${$(this).attr('id')}-section`).offset().top },
-        'slow'
-      );
-  });
 
-  $(window).scroll(function() {
+  // add listeners
+  $menuBtn.on('click', menuHandler);
+  $('.menu-item').on('click', handleItemClick);
+
+  $window.scroll(function() {
     setMenuBackgroundColor()
   });
 });
