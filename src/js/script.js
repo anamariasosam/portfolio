@@ -60,8 +60,9 @@ function setMenuBackgroundColor() {
       $(`.${section.name}-text p,
         .${section.name}-text h6,
         .${section.name}-text h2,
-        .${section.name}-text a`
-      ).removeClass('invisible').addClass('fadeInRightBig')
+        .${section.name}-text a,
+        .${section.name}-text img`,
+      ).removeClass('invisible').addClass('fadeInUpBig')
     }
   })
 }

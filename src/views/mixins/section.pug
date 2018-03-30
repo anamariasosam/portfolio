@@ -1,7 +1,10 @@
 mixin section(name)
   section(id=`${name}-section`)
     .row.no-gutters
-      div(class=`${name}-img col-12 col-md-6 section--img` )
+      if  name == 'about'
+        div(class=`${name}-img col-12 col-md-6 section--img`)
+      else
+        div(class=`${name}-img col-12 col-md-6 section--img d-none d-sm-none d-md-block d-xl-block` )
       div(class=`${name}-content col-12 col-md-6`)
         div(class=`${name}-text section--text`)
           block
