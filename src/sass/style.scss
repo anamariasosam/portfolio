@@ -381,6 +381,11 @@
     background-size: auto 110%;
   }
 
+  &-email, &-email:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
   &-text {
     & h2 {
       color: #fff;
