@@ -5,30 +5,30 @@
     {
       "slug": "fehandbags",
       "name": "Fe Handbags",
-      "type":"Shopify Store | UI",
+      "type":"Shopify Store: HTML, CSS & JS",
       "url":"https://fehandbags.com/",
       "description":"High end Colombian handbags and accessories with 100% genuine leather handmade by indigenous tribes such as Kunas, Embera an Wayuu"
     },
     {
       "slug": "eldorado",
       "name": "El Dorado Art",
-      "type": "Shopify Store",
+      "type": "Shopify Store: HTML, CSS & JS",
       "url": "https://eldoradoart.com/",
-      "description": "Productos únicos y exclusivos hechos por comunidades y artistas independientes. Arte, moda y joyería."
+      "description": "Dedicated on promoting emerging artist and artisans that create unique and exclusive pieces by giving them the opportunity to have an international platform to showcase their products"
     },
     {
       "slug": "manik",
       "name": "Manik",
-      "type": "Shopify Store",
+      "type": "Shopify Store: HTML, CSS & JS",
       "url": "https://manik.com.co/",
-      "description": "Sanación decorativa, por medio de nuestros elementos buscamos generar cambios positivos en las personas, en búsqueda de autosanación y luchar por sus sueños."
+      "description": "Handmade Dreamcatchers created with the best energy and intentions thanks to the girls of the 'Juguemos en el bosque' foundation"
     },
     {
       "slug": "below",
       "name": "33 Below Ice Cream",
-      "type": "Wordpress Site",
+      "type": "Wordpress Site: HTML, CSS & JS",
       "url": "http://33belowicecream.com/",
-      "description": "Miami's original hand rolled ice cream!"
+      "description": "Miami's original hand rolled ice cream!. Rolled ice cream combining handcrafted ingredients & signature flavors to create an ultimate & intimate experience in Frozen Desserts"
     }
   ]
 }
