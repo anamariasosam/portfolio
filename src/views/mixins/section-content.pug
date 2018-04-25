@@ -1,5 +1,6 @@
-mixin section-content(slug, name, type, url, description)
+mixin section-content(slug, name, type, languages, url, description)
   h6.animated.invisible - #{type} -
+  h6.animated.invisible [ #{languages} ]
   h2.animated.invisible #{name}
   img(src=`../img/${slug}.jpg` class="img-fluid d-block d-sm-block d-md-none d-xl-none animated invisible" alt=name)
   hr
