@@ -8,6 +8,7 @@ const $body = $('body')
 function openNav() {
   $menuBtn.addClass('open')
   $body.css( 'overflow', 'hidden' )
+  $body.css( 'position', 'fixed' )
   $nav.css( 'height', '100%' )
   $menuItem.removeClass('slideOutLeft')
   $menuItem.addClass('slideInLeft')
@@ -18,6 +19,7 @@ function closeNav() {
   $menuItem.removeClass('slideInLeft')
   $menuItem.addClass('slideOutLeft')
   $body.css( 'overflow', 'auto' )
+  $body.css( 'position', 'absolute' )
   setTimeout(function(){
     $nav.css( 'height', '0%' )
   }, 500);
