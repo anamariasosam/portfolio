@@ -3,10 +3,20 @@
 
 /* ------ Global Styles  ----- */
 body {
-  font-family: 'Avenir';
+  font-family: 'Avenir', 'Open Sans';
   font-weight: normal;
   font-style: normal;
-  overflow-x: hidden !important;
+}
+
+html, .closeNav {
+  overflow: auto;
+  position: absolute;
+  overflow-x: hidden;
+}
+
+.openNav {
+  overflow: hidden;
+  position: fixed;
 }
 
 div {
