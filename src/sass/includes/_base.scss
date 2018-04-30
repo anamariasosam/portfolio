@@ -8,18 +8,15 @@ body {
   font-style: normal;
 }
 
-html, .closeNav {
-  overflow: auto;
-  position: absolute;
-  overflow-x: hidden;
-}
-
-.openNav {
-  overflow: hidden;
-  position: fixed;
-}
-
 div {
   margin: 0;
   padding: 0;
+}
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+.openNav  {
+  overflow: hidden !important;
 }

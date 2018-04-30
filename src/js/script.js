@@ -8,20 +8,22 @@ const $body = $('body')
 function openNav() {
   $menuBtn.addClass('open')
 
-  $body.removeClass('closeNav').addClass('openNav')
+  $body.addClass('openNav')
 
-  $nav.css( 'height', '100%' )
   $menuItem.removeClass('slideOutLeft')
   $menuItem.addClass('slideInLeft')
+
+  $nav.css( 'height', '100%' )
 }
 
 function closeNav() {
   $menuBtn.removeClass('open')
+
+  $body.removeClass('openNav')
+
   $menuItem.removeClass('slideInLeft')
   $menuItem.addClass('slideOutLeft')
-
-  $body.removeClass('openNav').addClass('closeNav')
-
+  
   setTimeout(function(){
     $nav.css( 'height', '0%' )
   }, 500);
@@ -85,7 +87,7 @@ function handleItemClick() {
 
   $('html, body')
     .animate({
-      scrollTop: $(`#${$(this).attr('id')}-section`).offset().top
+      scrollTop: $(`#${$(this).attr('id')}-section`).offset().top + 10
     }, 'slow' );
 }
 
