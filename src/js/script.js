@@ -23,7 +23,7 @@ function closeNav() {
 
   $menuItem.removeClass('slideInLeft')
   $menuItem.addClass('slideOutLeft')
-  
+
   setTimeout(function(){
     $nav.css( 'height', '0%' )
   }, 500);
