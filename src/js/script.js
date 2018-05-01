@@ -5,10 +5,25 @@ const $menuBtn = $('.menu--btn')
 const $window = $(window)
 const $body = $('body')
 
+function preventDefault(e){
+  e.preventDefault();
+}
+
+function disableScroll(){
+  document.body.addEventListener('touchmove', preventDefault, { passive: false });
+}
+function enableScroll(){
+  document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+}
+
+$('body').bind('touchmove', function(e){e.preventDefault()})
+
 function openNav() {
   $menuBtn.addClass('open')
 
   $body.addClass('openNav')
+
+  disableScroll()
 
   $menuItem.removeClass('slideOutLeft')
   $menuItem.addClass('slideInLeft')
@@ -20,6 +35,7 @@ function closeNav() {
   $menuBtn.removeClass('open')
 
   $body.removeClass('openNav')
+  enableScroll()
 
   $menuItem.removeClass('slideInLeft')
   $menuItem.addClass('slideOutLeft')
@@ -93,6 +109,8 @@ function handleItemClick() {
 
 $(document).ready(function(){
   setMenuBackgroundColor()
+
+  window.scrollBy(0, 500);
 
   // add listeners
   $menuBtn.on('click', menuHandler);
