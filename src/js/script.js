@@ -60,20 +60,24 @@ function setMenuBackgroundColor() {
       color: '#D7263D'
     },
     {
-      name: 'fehandbags',
-      color: '#F46036'
-    },
-    {
-      name: 'eldorado',
-      color: '#1B998B'
+      name: 'motounovirtual',
+      color: '#C5D86D'
     },
     {
       name: 'manik',
       color: '#C5D86D'
     },
     {
+      name: 'eldorado',
+      color: '#1B998B'
+    },
+    {
       name: 'below',
       color: '#2E294E'
+    },
+    {
+      name: 'fehandbags',
+      color: '#F46036'
     }
   ]
 
